@@ -1,0 +1,14 @@
+.back-link { padding: 8px 0; border: 0; background: transparent; color: var(--navy); font-weight: 700; cursor: pointer; }
+
+.auth-page { display: grid; min-height: 100vh; place-items: center; padding: 30px 20px; background: linear-gradient(145deg, #fff 25%, #e6f1fb 100%); }
+.auth-shell { width: min(100%, 510px); }
+.auth-shell > .back-link { margin-bottom: 18px; }
+.auth-card { padding: clamp(28px, 7vw, 52px); border: 1px solid var(--border); border-radius: 28px; background: var(--white); box-shadow: var(--shadow); }
+.auth-card .logo { display: inline-block; margin-bottom: 44px; }
+.auth-card h1 { margin-bottom: 30px; font-size: clamp(2rem, 7vw, 3.1rem); letter-spacing: -.05em; }
+.stack-form { display: grid; gap: 17px; }
+.stack-form label, .brief-form label, .admin-controls label { display: grid; gap: 7px; color: var(--deep-ocean); font-size: .88rem; font-weight: 700; }
+.stack-form input, .brief-form input, .brief-form textarea, .admin-controls select, .admin-controls textarea { width: 100%; min-height: 50px; padding: 11px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--white); color: var(--deep-ocean); font: inherit; outline: none; }
+.stack-form input:focus, .brief-form input:focus, .brief-form textarea:focus, .admin-controls select:focus, .admin-controls textarea:focus { border-color: var(--sky-blue); box-shadow: 0 0 0 3px rgba(55,138,221,.14); }
+.auth-switch { margin: 25px 0 0; text-align: center; }
+.auth-switch button { padding: 0; border: 0; background: transparent; color: var(--sky-blue); font-weight: 700; cursor: pointer; }

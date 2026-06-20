@@ -1,0 +1,33 @@
+
+.order-page, .dashboard-page { min-height: 100vh; padding: 48px 0 96px; background: linear-gradient(145deg, #fff 25%, #eef6fd 100%); }
+.order-shell, .dashboard-shell { max-width: 1120px; }
+.back-link { padding: 8px 0; border: 0; background: transparent; color: var(--navy); font-weight: 700; cursor: pointer; }
+.order-heading { max-width: 720px; margin: 54px 0 42px; }
+.order-heading h1, .dashboard-heading h1 { margin-bottom: 14px; color: var(--deep-ocean); font-family: 'Manrope', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -.055em; line-height: 1.05; }
+.order-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 24px; }
+.order-panel, .dashboard-card, .empty-state { padding: 38px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+.order-panel h2 { margin: 8px 0 28px; font-size: 1.65rem; }
+.step-label, .order-id { color: var(--sky-blue); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.promo-form label { display: block; margin-bottom: 9px; color: var(--deep-ocean); font-weight: 700; }
+.promo-controls { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+.promo-controls input { min-width: 0; height: 54px; padding: 0 17px; border: 1px solid var(--border); border-radius: 14px; color: var(--deep-ocean); font: inherit; text-transform: uppercase; outline: none; }
+.promo-controls input:focus { border-color: var(--sky-blue); box-shadow: 0 0 0 3px rgba(55,138,221,.14); }
+.form-message { min-height: 24px; margin: 12px 0 0; font-size: .9rem; font-weight: 700; }
+.form-message.success { color: #16835b; }
+.form-message.error { color: #c43d4b; }
+.manual-note { display: grid; gap: 5px; margin-top: 38px; padding: 20px; border-radius: 16px; background: var(--pale-blue); font-size: .9rem; }
+.manual-note strong { color: var(--deep-ocean); }
+.price-summary .total-row dt, .price-summary .total-row dd { color: var(--deep-ocean); font-family: 'Manrope'; font-size: 1.15rem; font-weight: 800; }
+.create-order { width: 100%; margin-top: 26px; }
+.summary-caption { margin: 14px 0 0; font-size: .78rem; text-align: center; }
+
+@media (max-width: 800px) {
+  .order-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .order-page { padding-top: 24px; }
+  .order-heading { margin: 38px 0 28px; }
+  .order-panel { padding: 25px 22px; }
+  .promo-controls { grid-template-columns: 1fr; }
+}

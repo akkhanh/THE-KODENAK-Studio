@@ -1,0 +1,94 @@
+
+.customer-welcome { display: flex; padding: clamp(25px,4vw,42px); align-items: center; justify-content: space-between; gap: 28px; border: 1px solid #b5d4f4; border-radius: 26px; background: linear-gradient(135deg,#fff 35%,#e6f1fb); box-shadow: 0 16px 45px rgba(4,44,83,.07); }
+.customer-welcome h2 { max-width: 650px; margin: 6px 0 9px; font-size: clamp(1.6rem,3vw,2.45rem); line-height: 1.12; }
+.customer-welcome p:not(.customer-kicker) { margin: 0; color: #547b9f; }
+.customer-quick-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+.customer-quick-actions > button:not(.button) { min-height: 43px; padding: 0 16px; border: 1px solid #b5d4f4; border-radius: 999px; background: white; color: #185fa5; font-weight: 800; cursor: pointer; }
+.customer-kicker { margin: 0; color: #378add; font-size: .7rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.customer-stat-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; margin: 24px 0 42px; }
+.customer-stat-grid article { display: grid; min-height: 125px; padding: 22px; align-content: space-between; border: 1px solid #d4e6f5; border-radius: 18px; background: white; }
+.customer-stat-grid span { color: #6386a5; font-size: .78rem; font-weight: 700; }
+.customer-stat-grid strong { font-size: clamp(1.45rem,2.3vw,2rem); }
+.customer-section-head { display: flex; margin: 34px 0 17px; align-items: end; justify-content: space-between; }
+.customer-section-head h2 { margin: 5px 0 0; font-size: 1.4rem; }
+.customer-link { padding: 3px; border: 0; background: none; color: #185fa5; font: inherit; font-size: .8rem; font-weight: 800; cursor: pointer; }
+.customer-link.back { margin-bottom: 18px; }
+.customer-order-list { display: grid; gap: 15px; }
+.customer-order-card, .customer-payment-card, .customer-brief-card { padding: 24px; border: 1px solid #d2e5f5; border-radius: 19px; background: white; box-shadow: 0 8px 24px rgba(4,44,83,.045); }
+.customer-order-card { display: grid; grid-template-columns: minmax(190px,1.3fr) minmax(190px,1fr) minmax(310px,1.7fr) auto; align-items: center; gap: 18px; }
+.customer-order-card p, .customer-brief-card p { margin: 0 0 5px; color: #6b8eac; font-size: .7rem; }
+.customer-order-card h2, .customer-brief-card h2 { margin: 0; font-size: 1rem; }
+.customer-status-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.customer-status { display: inline-flex; width: fit-content; padding: 7px 10px; border-radius: 999px; background: #e6f1fb; color: #185fa5; font-size: .67rem; font-weight: 800; }
+.customer-status.payment.fully_paid, .customer-status.project.completed, .customer-status.project.brief_submitted { background: #ddf5e9; color: #13724d; }
+.customer-status.payment.cancelled, .customer-status.project.cancelled { background: #fae5e8; color: #a82e3a; }
+.customer-status.payment.unpaid, .customer-status.project.waiting_deposit, .customer-status.project.waiting_brief { background: #fff1d6; color: #916314; }
+.customer-order-money { display: grid; grid-template-columns: repeat(3,1fr); gap: 13px; }
+.customer-order-money span, .customer-payment-card span { display: grid; gap: 4px; color: #7592ad; font-size: .66rem; }
+.customer-order-money strong, .customer-payment-card strong { color: #042c53; font-size: .79rem; }
+.customer-package-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.customer-package { display: flex; min-height: 420px; padding: 30px; flex-direction: column; border: 1px solid #b5d4f4; border-radius: 24px; background: white; box-shadow: 0 12px 35px rgba(4,44,83,.06); }
+.customer-package h2 { margin: 9px 0; font-size: 1.35rem; }
+.customer-package > p:not(.customer-kicker) { min-height: 55px; margin: 0 0 20px; color: #6585a2; font-size: .82rem; line-height: 1.6; }
+.customer-package > strong { color: #185fa5; font-size: 1.65rem; }
+.customer-package ul { display: grid; padding: 0; margin: 25px 0; gap: 10px; list-style: none; color: #416b91; font-size: .77rem; }
+.customer-package .button { margin-top: auto; align-self: flex-start; }
+.customer-empty { display: grid; min-height: 300px; padding: 40px; place-items: center; align-content: center; text-align: center; border: 1px dashed #b5d4f4; border-radius: 24px; background: white; }
+.customer-empty > span { color: #378add; font-size: 2rem; }
+.customer-empty h2 { margin: 12px 0 5px; }
+.customer-empty p { max-width: 480px; margin: 0 0 20px; color: #6487a6; }
+.customer-alert { padding: 14px 18px; margin: 18px 0; border-radius: 13px; background: #ddf5e9; color: #13724d; font-size: .8rem; font-weight: 700; }
+.customer-alert.error { background: #fae5e8; color: #a82e3a; }
+.customer-loading { padding: 80px 20px; color: #6287a8; text-align: center; }
+.customer-payment-card { display: grid; grid-template-columns: 1fr 1.3fr; align-items: center; gap: 15px; }
+.customer-payment-card > div { display: flex; gap: 20px; align-items: center; }
+.customer-payment-card > div:nth-child(2) { display: grid; grid-template-columns: repeat(3,1fr); }
+.customer-payment-card p { margin: 0; font-weight: 800; }
+.customer-payment-card small { grid-column: 1/-1; color: #7a98b2; }
+.customer-brief-card { display: grid; grid-template-columns: 1fr auto 1.2fr auto; align-items: center; gap: 24px; }
+.customer-brief-card > p { margin: 0; }
+.customer-brief-actions { display: flex; gap: 14px; align-items: center; }
+.button.small { min-height: 38px; padding: 0 18px; font-size: .76rem; }
+.customer-detail-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; }
+.customer-detail-panel { padding: 30px; border: 1px solid #cfe3f4; border-radius: 22px; background: white; }
+.customer-detail-panel h2 { margin: 8px 0 17px; }
+.customer-detail-panel dl { display: grid; margin: 25px 0 0; }
+.customer-detail-panel dl div { display: flex; padding: 12px 0; justify-content: space-between; gap: 20px; border-top: 1px solid #e3eef8; }
+.customer-detail-panel dt { color: #698ba8; }
+.customer-detail-panel dd { margin: 0; font-weight: 800; text-align: right; }
+.customer-detail-panel.payment { background: linear-gradient(145deg,#e6f1fb,#fff); }
+.customer-bank-note { padding: 16px; margin-top: 24px; border-radius: 13px; background: white; color: #517798; font-size: .8rem; line-height: 1.6; }
+.customer-detail-brief { display: flex; margin-top: 20px; align-items: center; justify-content: space-between; gap: 25px; }
+.customer-detail-brief p:last-child { margin-bottom: 0; color: #6888a4; }
+.customer-account { display: grid; max-width: 720px; padding: 35px; gap: 20px; border: 1px solid #cfe3f4; border-radius: 24px; background: white; }
+.customer-account h2 { margin: 7px 0; }
+.customer-account > div > p:last-child { color: #6c8ba6; }
+.customer-account label { display: grid; gap: 7px; color: #315c82; font-size: .76rem; font-weight: 800; }
+.customer-account input { min-height: 48px; padding: 0 14px; border: 1px solid #b5d4f4; border-radius: 12px; color: #042c53; font: inherit; }
+.customer-account input:disabled { background: #f2f7fb; color: #7a96af; }
+.customer-account .button { justify-self: start; }
+.customer-form-message { margin: 0; color: #13724d; font-size: .8rem; font-weight: 700; }
+.customer-overlay { display: none; }
+
+@media (max-width: 1050px) {
+
+  .customer-stat-grid { grid-template-columns: repeat(3,1fr); }
+  .customer-order-card { grid-template-columns: 1fr 1fr; }
+  .customer-package-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 700px) {
+
+  .customer-welcome { align-items: flex-start; flex-direction: column; }
+  .customer-stat-grid, .customer-package-grid, .customer-detail-grid { grid-template-columns: 1fr; }
+  .customer-stat-grid { gap: 10px; }
+  .customer-stat-grid article { min-height: 100px; }
+  .customer-order-card { grid-template-columns: 1fr; }
+  .customer-order-money { grid-template-columns: 1fr 1fr; }
+  .customer-payment-card, .customer-brief-card { grid-template-columns: 1fr; }
+  .customer-payment-card > div { align-items: flex-start; flex-direction: column; }
+  .customer-payment-card > div:nth-child(2) { grid-template-columns: 1fr; }
+  .customer-payment-card small { grid-column: auto; }
+  .customer-detail-brief { align-items: flex-start; flex-direction: column; }
+  .customer-account { padding: 24px 18px; }
+}

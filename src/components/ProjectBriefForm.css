@@ -1,0 +1,30 @@
+.order-page, .dashboard-page { min-height: 100vh; padding: 48px 0 96px; background: linear-gradient(145deg, #fff 25%, #eef6fd 100%); }
+.order-shell, .dashboard-shell { max-width: 1120px; }
+.back-link { padding: 8px 0; border: 0; background: transparent; color: var(--navy); font-weight: 700; cursor: pointer; }
+.order-heading { max-width: 720px; margin: 54px 0 42px; }
+.order-heading h1, .dashboard-heading h1 { margin-bottom: 14px; color: var(--deep-ocean); font-family: 'Manrope', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -.055em; line-height: 1.05; }
+.order-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 24px; }
+.order-panel, .dashboard-card, .empty-state { padding: 38px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+
+.brief-shell { max-width: 900px; }
+.brief-form { display: grid; gap: 24px; }
+.brief-guide { padding: 18px 20px; border: 1px solid #b5d4f4; border-radius: 15px; background: #f3f9ff; }
+.brief-guide strong { color: var(--deep-ocean); }
+.brief-guide p { margin: 5px 0 0; color: #426f98; font-size: .84rem; line-height: 1.6; }
+.brief-hint { color: #5f82a1; font-size: .72rem; font-weight: 500; line-height: 1.45; }
+.brief-form input::placeholder, .brief-form textarea::placeholder { color: #83a0ba; font-weight: 400; opacity: 1; }
+.brief-reassurance { padding: 14px 17px; margin: 0; border-radius: 12px; background: #e8f4ff; color: #185fa5; font-size: .8rem; line-height: 1.55; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; }
+.form-grid .full { grid-column: 1 / -1; }
+.brief-form textarea { min-height: 110px; resize: vertical; }
+.check-row { display: flex; flex-wrap: wrap; gap: 18px 30px; }
+.check-row label { display: flex; align-items: center; gap: 9px; }
+.check-row input { width: 18px; min-height: 18px; }
+
+@media (max-width: 560px) {
+  .dashboard-page { padding-top: 24px; }
+  .order-heading { margin: 38px 0 28px; }
+  .dashboard-card { padding: 25px 22px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .full { grid-column: auto; }
+}

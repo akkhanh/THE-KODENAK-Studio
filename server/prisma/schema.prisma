@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CUSTOMER
+  ADMIN
+}
+
+enum PaymentStatus {
+  UNPAID
+  DEPOSIT_PENDING
+  DEPOSIT_PAID
+  FINAL_PAYMENT_PENDING
+  FULLY_PAID
+  CANCELLED
+}
+
+enum ProjectStatus {
+  WAITING_DEPOSIT
+  WAITING_BRIEF
+  BRIEF_SUBMITTED
+  REVIEWING
+  IN_PROGRESS
+  WAITING_FEEDBACK
+  WAITING_FINAL_PAYMENT
+  READY_TO_DELIVER
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentMethod {
+  BANK_TRANSFER
+  CASH
+  MANUAL
+}
+
+enum DiscountType {
+  PERCENT
+  FIXED
+}
+
+model User {
+  id           String         @id @default(cuid())
+  name         String
+  email        String         @unique
+  phone        String
+  passwordHash String
+  role         UserRole       @default(CUSTOMER)
+  isActive     Boolean        @default(true)
+  lastLoginAt  DateTime?
+  orders       ServiceOrder[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model ServicePackage {
+  id          String         @id @default(cuid())
+  name        String
+  slug        String         @unique
+  description String
+  price       Int
+  features    String[]
+  isActive    Boolean        @default(true)
+  displayOrder Int           @default(0)
+  orders      ServiceOrder[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model PromoCode {
+  id            String       @id @default(cuid())
+  code          String       @unique
+  description   String
+  discountType  DiscountType @default(PERCENT)
+  discountValue Int
+  isActive      Boolean      @default(true)
+  usageLimit    Int?
+  usedCount     Int          @default(0)
+  startsAt      DateTime?
+  expiresAt     DateTime?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model ServiceOrder {
+  id                String          @id @default(cuid())
+  customerId        String
+  packageId         String
+  packageName       String
+  originalPrice     Int
+  promoCode         String          @default("")
+  discountType      DiscountType?
+  discountValue     Int             @default(0)
+  discountPercent   Int             @default(0)
+  discountAmount    Int             @default(0)
+  finalPrice        Int
+  depositPercent    Int             @default(30)
+  depositAmount     Int
+  remainingAmount   Int
+  paymentMethod     PaymentMethod   @default(BANK_TRANSFER)
+  paymentStatus     PaymentStatus   @default(UNPAID)
+  projectStatus     ProjectStatus   @default(WAITING_DEPOSIT)
+  adminNote         String          @default("")
+  paymentNote       String          @default("")
+  cancelledAt       DateTime?
+  completedAt       DateTime?
+  customer          User            @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  servicePackage    ServicePackage  @relation(fields: [packageId], references: [id], onDelete: Restrict)
+  brief             ProjectBrief?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@index([customerId])
+  @@index([packageId])
+  @@index([createdAt])
+}
+
+model ProjectBrief {
+  id                 String       @id @default(cuid())
+  orderId            String       @unique
+  businessName       String
+  businessType       String
+  websiteGoal        String
+  projectDescription String
+  preferredStyle     String       @default("")
+  referenceWebsite   String       @default("")
+  timeline           String       @default("")
+  hasLogo            Boolean      @default(false)
+  hasContentReady    Boolean      @default(false)
+  customerNote       String       @default("")
+  adminBriefNote     String       @default("")
+  isReviewed         Boolean      @default(false)
+  order              ServiceOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+}
+
+model FAQItem {
+  id           String   @id @default(cuid())
+  question     String
+  answer       String
+  category     String   @default("Chung")
+  isActive     Boolean  @default(true)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model WebsiteSetting {
+  id                String   @id @default("main")
+  brandName         String   @default("THE KODENAK Studio")
+  tagline           String   @default("Your idea. Our code.")
+  contactEmail      String   @default("hello@thekodenak.com")
+  facebookUrl       String   @default("")
+  zaloUrl           String   @default("")
+  locationText      String   @default("Việt Nam / Remote")
+  bankName          String   @default("")
+  bankAccountName   String   @default("")
+  bankAccountNumber String   @default("")
+  footerDescription String   @default("Websites for individuals, students, freelancers, and small businesses.")
+  updatedAt         DateTime @updatedAt
+}

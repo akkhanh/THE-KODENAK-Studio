@@ -1,0 +1,57 @@
+
+.admin-card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.admin-card-actions button, .admin-danger-actions button { min-height: 38px; padding: 0 13px; border: 1px solid var(--border); border-radius: 10px; background: #f8fbff; color: var(--navy); font-weight: 700; cursor: pointer; }
+.admin-card-actions button:hover { border-color: var(--sky-blue); color: var(--sky-blue); }
+.admin-modal-layer { position: fixed; z-index: 400; inset: 0; display: grid; padding: 24px; place-items: center; }
+.admin-modal-backdrop { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(4,44,83,.55); backdrop-filter: blur(4px); }
+.admin-modal { position: relative; width: min(760px, 100%); max-height: calc(100vh - 48px); overflow-y: auto; padding: 28px; border: 1px solid var(--border); border-radius: 24px; background: white; box-shadow: 0 30px 80px rgba(4,44,83,.25); }
+.admin-modal-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.admin-modal-head h2 { margin: 0; font-size: 1.45rem; }
+.admin-modal-head button { display: grid; width: 38px; height: 38px; place-items: center; border: 0; border-radius: 50%; background: var(--pale-blue); color: var(--deep-ocean); font-size: 1.45rem; cursor: pointer; }
+.admin-crud-form { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.admin-crud-form label, .admin-standalone-field, .admin-settings-form label { display: grid; gap: 7px; color: var(--deep-ocean); font-size: .78rem; font-weight: 700; }
+.admin-crud-form .full { grid-column: 1 / -1; }
+.admin-crud-form input, .admin-crud-form select, .admin-crud-form textarea, .admin-standalone-field textarea, .admin-settings-form input, .admin-settings-form textarea { width: 100%; min-height: 46px; padding: 10px 13px; border: 1px solid var(--border); border-radius: 11px; background: white; color: var(--deep-ocean); font: inherit; outline: none; }
+.admin-crud-form textarea, .admin-standalone-field textarea, .admin-settings-form textarea { min-height: 100px; resize: vertical; }
+.admin-form-actions { display: flex; grid-column: 1 / -1; justify-content: flex-end; gap: 10px; margin-top: 5px; }
+.admin-form-actions > button:not(.button) { padding: 0 18px; border: 1px solid var(--border); border-radius: 999px; background: white; font-weight: 700; cursor: pointer; }
+.admin-crud-message { grid-column: 1 / -1; margin: 0; padding: 10px 13px; border-radius: 10px; background: #ddf5e9; color: #16724f; font-size: .8rem; font-weight: 700; }
+.admin-crud-message.error { background: #fbe3e6; color: #a82e3a; }
+.admin-row-action.danger { margin-left: 10px; color: #b93643; }
+.admin-customer-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.admin-customer-summary p { display: grid; gap: 4px; padding: 14px; margin: 0; border-radius: 12px; background: #f8fbff; }
+.admin-customer-summary span { color: #6d93b7; font-size: .7rem; }
+.admin-modal-section-title { margin: 26px 0 12px; font-size: 1rem; }
+.admin-mini-order { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 12px 0; border-top: 1px solid #e2eef9; font-size: .78rem; }
+.admin-mini-order strong { color: var(--deep-ocean); text-align: right; }
+.admin-brief-view { display: grid; gap: 10px; margin-bottom: 20px; }
+.admin-brief-view p { padding: 13px; margin: 0; border-radius: 11px; background: #f8fbff; }
+.admin-brief-view span { display: block; margin-bottom: 4px; color: #6d93b7; font-size: .7rem; font-weight: 700; }
+.admin-faq-list { display: grid; gap: 14px; }
+.admin-faq-list .admin-panel h3 { margin: 14px 0 8px; font-size: 1.08rem; }
+.admin-faq-list .admin-panel p { margin-bottom: 0; }
+.admin-settings-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.admin-settings-form section { display: grid; align-content: start; gap: 14px; }
+.admin-settings-form section:last-of-type { grid-column: 1 / -1; grid-template-columns: repeat(3, 1fr); }
+.admin-settings-form section:last-of-type h2, .admin-settings-form section:last-of-type p { grid-column: 1 / -1; }
+.admin-settings-form h2 { margin: 0 0 5px; font-size: 1.15rem; }
+.admin-settings-form > .button, .admin-settings-form > .admin-crud-message { grid-column: 1 / -1; justify-self: start; }
+.admin-danger-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.admin-danger-actions button:first-child { color: #16724f; }
+.admin-danger-actions button:last-child { color: #b93643; }
+
+
+@media (max-width: 1180px) {
+  .admin-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+  .admin-card-grid { grid-template-columns: 1fr; }
+
+  .admin-crud-form, .admin-settings-form, .admin-settings-form section:last-of-type { grid-template-columns: 1fr; }
+  .admin-crud-form .full, .admin-form-actions, .admin-settings-form section:last-of-type, .admin-settings-form section:last-of-type h2, .admin-settings-form section:last-of-type p { grid-column: auto; }
+  .admin-modal-layer { padding: 10px; }
+  .admin-modal { max-height: calc(100vh - 20px); padding: 20px; border-radius: 18px; }
+  .admin-customer-summary { grid-template-columns: 1fr; }
+  .admin-mini-order { align-items: flex-start; flex-direction: column; }
+}

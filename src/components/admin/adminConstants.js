@@ -1,0 +1,3 @@
+export const PAYMENT_LABELS = { UNPAID: 'Chưa thanh toán', DEPOSIT_PENDING: 'Chờ xác nhận cọc', DEPOSIT_PAID: 'Đã thanh toán cọc', FINAL_PAYMENT_PENDING: 'Chờ thanh toán cuối', FULLY_PAID: 'Đã thanh toán đủ', CANCELLED: 'Đã hủy' }
+export const PROJECT_LABELS = { WAITING_DEPOSIT: 'Chờ cọc', WAITING_BRIEF: 'Chờ brief', BRIEF_SUBMITTED: 'Đã gửi brief', REVIEWING: 'Đang xem xét', IN_PROGRESS: 'Đang thực hiện', WAITING_FEEDBACK: 'Chờ phản hồi', WAITING_FINAL_PAYMENT: 'Chờ thanh toán cuối', READY_TO_DELIVER: 'Sẵn sàng bàn giao', COMPLETED: 'Hoàn thành', CANCELLED: 'Đã hủy' }
+export const formatDate = (value) => new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short' }).format(new Date(value))

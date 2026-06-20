@@ -1,0 +1,46 @@
+
+.admin-app { min-height: 100vh; background: #f8fbff; color: var(--navy); }
+.admin-sidebar { position: fixed; z-index: 220; inset: 0 auto 0 0; display: flex; width: 272px; flex-direction: column; padding: 26px 18px 20px; background: var(--deep-ocean); color: var(--pale-blue); box-shadow: 12px 0 35px rgba(4,44,83,.1); }
+.admin-brand { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 8px 22px; border-bottom: 1px solid rgba(181,212,244,.18); }
+.admin-brand-mark { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border-radius: 13px; background: var(--sky-blue); color: white; font: 800 1rem 'Manrope'; }
+.admin-brand strong, .admin-profile strong { display: block; color: white; font: 700 .83rem 'Manrope'; letter-spacing: .04em; }
+.admin-brand small, .admin-profile small { display: block; overflow: hidden; margin-top: 3px; color: #9fc7eb; font-size: .68rem; text-overflow: ellipsis; white-space: nowrap; }
+.admin-menu-close { display: none; margin-left: auto; border: 0; background: transparent; color: white; font-size: 1.8rem; }
+.admin-nav { display: grid; gap: 4px; padding: 22px 0; overflow-y: auto; }
+.admin-nav button, .admin-logout { display: flex; width: 100%; min-height: 44px; align-items: center; gap: 13px; padding: 0 13px; border: 0; border-radius: 12px; background: transparent; color: #cfe4f8; font-size: .86rem; font-weight: 600; text-align: left; cursor: pointer; transition: background .18s ease, color .18s ease; }
+.admin-nav button > span, .admin-logout > span { display: grid; width: 22px; place-items: center; color: var(--highlight); font-size: 1rem; }
+.admin-nav button:hover, .admin-nav button.active { background: var(--sky-blue); color: white; }
+.admin-nav button.active > span { color: white; }
+.admin-profile { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 10px; margin-top: auto; padding: 17px 9px; border-top: 1px solid rgba(181,212,244,.18); }
+.admin-avatar { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 50%; background: rgba(133,183,235,.2); color: white; font-weight: 800; }
+.admin-logout { margin-top: 2px; color: #f0b3bb; }
+.admin-logout:hover { background: rgba(196,61,75,.15); }
+.admin-main { min-height: 100vh; margin-left: 272px; }
+.admin-topbar { display: flex; min-height: 132px; align-items: center; justify-content: space-between; gap: 24px; padding: 28px clamp(24px, 4vw, 52px); border-bottom: 1px solid rgba(181,212,244,.7); background: rgba(255,255,255,.92); backdrop-filter: blur(15px); }
+.admin-topbar h1 { margin: 2px 0 5px; font-size: clamp(1.8rem, 3.5vw, 2.65rem); letter-spacing: -.045em; }
+.admin-topbar p { margin: 0; font-size: .88rem; }
+.admin-kicker { color: var(--sky-blue); font-size: .65rem !important; font-weight: 800; letter-spacing: .14em; }
+.admin-top-actions { display: flex; align-items: center; gap: 10px; }
+.admin-home-button, .admin-row-action, .admin-panel-head button, .admin-back { border: 0; background: transparent; color: var(--sky-blue); font-weight: 700; cursor: pointer; }
+.admin-home-button { min-height: 42px; padding: 0 17px; border: 1px solid var(--border); border-radius: 999px; background: white; }
+.admin-menu-toggle { display: none; border: 0; background: transparent; color: var(--deep-ocean); font-size: 1.4rem; }
+.admin-content { padding: 34px clamp(20px, 4vw, 52px) 70px; }
+
+@media (max-width: 900px) {
+
+  .admin-sidebar { transform: translateX(-105%); transition: transform .22s ease; }
+  .admin-sidebar.open { transform: translateX(0); }
+  .admin-menu-close, .admin-menu-toggle { display: block; cursor: pointer; }
+  .admin-main { margin-left: 0; }
+  .admin-topbar { align-items: flex-start; }
+  .admin-menu-toggle { margin-top: 7px; }
+  .admin-topbar > div:nth-child(2) { flex: 1; }
+}
+
+@media (max-width: 650px) {
+
+  .admin-topbar { min-height: auto; flex-wrap: wrap; padding: 20px; }
+  .admin-topbar h1 { font-size: 1.75rem; }
+  .admin-topbar > div:nth-child(2) { min-width: calc(100% - 55px); }
+  .admin-top-actions { width: 100%; justify-content: flex-end; }
+}

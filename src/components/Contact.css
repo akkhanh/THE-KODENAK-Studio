@@ -1,0 +1,18 @@
+
+.contact { padding: 72px 0; background: var(--white); }
+.contact-card { overflow: hidden; padding: 80px clamp(28px, 7vw, 90px); border-radius: 32px; background: var(--sky-blue); color: #eaf5ff; text-align: center; }
+.contact-card .eyebrow { color: #d9edff; }
+.contact-card h2 { max-width: 850px; margin-inline: auto; color: var(--white); }
+.contact-card > p:not(.eyebrow) { max-width: 650px; margin: 0 auto 32px; font-size: 1.05rem; }
+.contact-actions { justify-content: center; }
+.button.button-light { border-color: var(--white); background: var(--white); color: var(--deep-ocean); }
+.button.button-light:hover { background: var(--navy); color: var(--white); }
+.button.button-outline-light { border-color: rgba(255,255,255,.65); background: transparent; }
+.button.button-outline-light:hover { border-color: var(--white); background: rgba(255,255,255,.12); color: var(--white); }
+
+@media (max-width: 720px) {
+
+  .contact { padding: 52px 0; }
+  .contact-card { width: calc(100% - 24px); padding: 60px 20px; border-radius: 26px; }
+  .contact-actions { flex-direction: column; }
+}

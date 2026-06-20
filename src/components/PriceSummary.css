@@ -1,0 +1,9 @@
+
+.price-summary { margin: 0; }
+.price-summary > div { display: flex; justify-content: space-between; gap: 24px; padding: 13px 0; border-bottom: 1px solid rgba(181,212,244,.75); }
+.price-summary dt { color: var(--navy); }
+.price-summary dd { margin: 0; color: var(--deep-ocean); font-weight: 700; text-align: right; }
+.price-summary .promo-label { align-items: flex-start; font-size: .84rem; }
+.price-summary .promo-label dd { max-width: 270px; color: var(--navy); font-weight: 500; }
+.price-summary .discount-row dd { color: #16835b; }
+.price-summary .total-row { padding: 18px 0; }
