@@ -13,7 +13,7 @@
 .service-card .price { margin: 10px 0 22px; color: var(--deep-ocean); font-family: 'Manrope'; font-size: 1.4rem; font-weight: 800; }
 .service-card ul { display: grid; gap: 10px; padding: 22px 0 26px; margin: 0 0 22px; border-top: 1px solid var(--border); list-style: none; }
 .service-card li { position: relative; padding-left: 23px; font-size: .9rem; }
-.service-card li::before { position: absolute; left: 0; color: var(--sky-blue); content: 'âœ“'; font-weight: 700; }
+.service-card li::before { position: absolute; left: 0; color: var(--sky-blue); content: '✓'; font-weight: 700; }
 .text-link { display: inline-flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 4px; color: var(--deep-ocean); font-weight: 700; transition: color .2s ease, gap .2s ease; }
 .text-link:hover { color: var(--sky-blue); }
 .service-select { width: 100%; border: 0; background: transparent; cursor: pointer; text-align: left; }

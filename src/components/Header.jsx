@@ -21,8 +21,8 @@ export default function Header({ user, onAccount, onOpenInfo }) {
     <nav className={open ? 'nav open' : 'nav'} aria-label="Điều hướng chính">
       {links.map(([label, href]) => <a key={href} href={href} onClick={closeMenu}>{label}</a>)}
       <div className={`nav-dropdown${infoOpen ? ' open' : ''}`}>
-        <button type="button" aria-expanded={infoOpen} onClick={() => setInfoOpen(!infoOpen)}>Thông tin <span>⌄</span></button>
-        <div className="nav-dropdown-menu">{infoLinks.map(([label, tab]) => <button key={tab} type="button" onClick={() => { closeMenu(); onOpenInfo(tab) }}>{label}<span>→</span></button>)}</div>
+        <button type="button" aria-expanded={infoOpen} onClick={() => setInfoOpen(!infoOpen)}>Thông tin <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
+        <div className="nav-dropdown-menu">{infoLinks.map(([label, tab]) => <button key={tab} type="button" onClick={() => { closeMenu(); onOpenInfo(tab) }}>{label}<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span></button>)}</div>
       </div>
       <a href="#lien-he" onClick={closeMenu}>Liên hệ</a>
       <button className="button button-small nav-account" type="button" onClick={() => { closeMenu(); onAccount() }}>{user ? (user.role === 'ADMIN' ? 'Quản trị' : 'Dự án của tôi') : 'Đăng nhập'}</button>
